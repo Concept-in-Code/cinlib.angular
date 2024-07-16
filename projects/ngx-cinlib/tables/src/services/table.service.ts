@@ -167,8 +167,8 @@ export class TableService {
   public setParams(params: SortPaginate): void {
     const newParams = {
       dir: params.dir,
-      page: params.page ?? this.params.value.page,
-      size: params.size ?? this.params.value.size,
+      page: Number(params.page ?? this.params.value.page),
+      size: Number(params.size ?? this.params.value.size),
       sort: params.sort
     };
     this.params.next(newParams);
